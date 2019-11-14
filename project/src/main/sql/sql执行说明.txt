@@ -1,0 +1,3 @@
+1.执行oracle-all-cloud.sql、gbase8s-all-cloud.sql、postgresql-all-cloud.sql中的一个。
+2.如果需要示例，可执行other文件夹下的demomenu.sql
+3.如果需要自定义查询，可执行other文件夹下的xquery-oracle.sql

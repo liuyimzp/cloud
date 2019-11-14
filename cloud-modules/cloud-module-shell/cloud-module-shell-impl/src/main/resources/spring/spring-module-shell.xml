@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="shellDao" class="com.yinhai.cloud.module.shell.impl.dao.impl.ShellDao"></bean>
+
+    <bean id="shellBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.shell.impl.bpo.ShellBpo">
+            </bean>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.nodes.impl.po.NodeInitializeStepPo" table="CLOUD_NODE_INIT_STEP">
+        <composite-id>
+            <key-property name="nodeId" column="NODE_ID" type="java.lang.Long"/>
+            <key-property name="stepOrder" column="STEP_ORDER" type="java.lang.Integer"/>
+        </composite-id>
+        <property name="stepState" type="java.lang.Integer">
+            <column name="STEP_STATE"/>
+        </property>
+        <property name="stepLog" type="java.lang.String">
+            <column name="STEP_LOG"/>
+        </property>
+        <property name="stepRunTime" type="java.lang.String">
+            <column name="STEP_RUN_TIME"/>
+        </property>
+
+        <property name="stepStartTime" type="java.lang.String">
+            <column name="STEP_START_TIME"/>
+        </property>
+
+        <property name="stepEndTime" type="java.lang.String">
+            <column name="STEP_END_TIME"/>
+        </property>
+
+        <property name="stepFinishedPercentage" type="java.lang.Integer">
+            <column name="STEP_FINISHED_Percentage"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>

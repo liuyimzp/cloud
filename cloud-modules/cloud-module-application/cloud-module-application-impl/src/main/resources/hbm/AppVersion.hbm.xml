@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.application.impl.po.AppVersionPo" table="cloud_appversion" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="id" type="java.lang.Long">
+            <column name="appversionid" length="20"/>
+            <generator class="native"/>
+        </id>
+        <property name="appId" type="java.lang.Long">
+            <column name="appid" length="20"/>
+        </property>
+        <property name="imageId" type="java.lang.Long">
+            <column name="imageid" length="20"/>
+        </property>
+
+        <property name="versionName" type="java.lang.Integer">
+            <column name="appversionname" length="20"/>
+        </property>
+        <property name="imageName" type="java.lang.String">
+            <column name="appversionimage" length="55"/>
+        </property>
+        <property name="imageVersion" type="java.lang.String">
+            <column name="imageversion" length="20"/>
+        </property>
+        <property name="isuse" type="java.lang.String">
+            <column name="isuse" length="5"/>
+        </property>
+        <property name="isAction" type="java.lang.String">
+            <column name="isaction" length="5"/>
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="appversiontime" length="7"/>
+        </property>
+    </class>
+</hibernate-mapping>

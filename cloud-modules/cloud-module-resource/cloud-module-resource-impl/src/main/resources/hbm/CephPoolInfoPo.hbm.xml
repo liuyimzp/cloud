@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.cluster.impl.po.CephPoolPo" table="CLOUD_CEPH_POOL_INFO">
+        <id name="poolId" type="java.lang.Long">
+            <column name="CEPH_POOL_ID" length="10"/>
+            <generator class="native"/>
+        </id>
+        <property name="poolName" type="java.lang.String">
+            <column name="CEPH_POOL_NAME"/>
+        </property>
+
+        <property name="poolIsUse" type="java.lang.Integer">
+            <column name="CEPH_POOL_USE"/>
+        </property>
+
+        <property name="clusterId" type="java.lang.Long">
+            <column name="CEPH_CLUSTER_ID"/>
+        </property>
+
+        <property name="createDate" type="timestamp">
+            <column name="POOL_CERATE_DATE" length="20"/>
+        </property>
+
+        <property name="createUser" type="java.lang.String">
+            <column name="POOL_CREATE_USER" length="20"/>
+        </property>
+
+        <property name="pgNum" type="java.lang.Integer">
+            <column name="POOL_PG_NUM" length="255"/>
+        </property>
+    </class>
+</hibernate-mapping>

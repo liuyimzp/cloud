@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: ${meta_name}
+  name: ${meta_name}
+  namespace: ${namespace}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${meta_name}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ${meta_name}
+    spec:
+      containers:
+      - env:
+        - name: PROVISIONER_NAME
+          value: fuseim.io/ifs
+        - name: NFS_SERVER
+          value: ${nfs_server_ip}
+        - name: NFS_PATH
+          value: ${nfs_server_path}
+        image: ${docker_repertory_url}/quay.io/external_storage/nfs-client-provisioner:latest
+        name: ${meta_name}
+        volumeMounts:
+        - mountPath: /persistentvolumes
+          name: nfs-client-root
+      serviceAccountName: ${meta_name}
+      serviceAccount: ${meta_name}
+      volumes:
+      - name: nfs-client-root
+        nfs:
+          path: ${nfs_server_path}
+          server: ${nfs_server_ip}

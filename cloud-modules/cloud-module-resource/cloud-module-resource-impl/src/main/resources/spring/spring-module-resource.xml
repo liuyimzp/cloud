@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 集群管理 -->
+    <bean id="clusterDao" class="com.yinhai.cloud.module.resource.cluster.impl.dao.impl.IClusterDaoImpl"></bean>
+
+    <!-- 集群删除监听器-->
+    <bean id="clusterDeletedListener"
+          class="com.yinhai.cloud.module.resource.event.listener.ClusterDeletedListener"></bean>
+
+    <bean id="clusterBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.cluster.impl.bpo.IClusterBpoIpml">
+
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 节点管理 -->
+    <bean id="nodeDao" class="com.yinhai.cloud.module.resource.nodes.impl.dao.impl.NodeDaoImpl"></bean>
+    <bean id="nodeOperateDao" class="com.yinhai.cloud.module.resource.nodes.impl.dao.impl.NodeOperateDaoImpl"></bean>
+    <bean id="nodeBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.nodes.impl.bpo.NodeBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="nodeInitStepBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.nodes.impl.bpo.NodeInitStepBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="nodeOperateRecordBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.nodes.impl.bpo.NodeOperateRecordBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 持久化存储卷 -->
+    <bean id="pvDao" class="com.yinhai.cloud.module.resource.pv.impl.dao.impl.IPersistentVolumeDaoImpl"></bean>
+
+    <!-- 存储系统 -->
+    <bean id="storageDao" class="com.yinhai.cloud.module.resource.pv.impl.dao.impl.IStorageDaoImpl"></bean>
+
+    <bean id="pvBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.pv.impl.bpo.IPersistentVolumeBpoImpl">
+
+            </bean>
+        </property>
+    </bean>
+
+    <!---->
+    <bean id="nodeInitBaseStepDao"
+          class="com.yinhai.cloud.module.resource.nodes.impl.dao.impl.NodeInitBaseStepDaoImpl"></bean>
+
+    <bean id="nodeInitializeStepDao"
+          class="com.yinhai.cloud.module.resource.nodes.impl.dao.impl.NodeInitializeStepDaoImpl"></bean>
+
+    <bean id="overviewDao" class="com.yinhai.cloud.module.resource.overview.impl.dao.impl.IOverviewDaoImpl"></bean>
+    <bean id="imageArrDao" class="com.yinhai.cloud.module.resource.cluster.impl.dao.impl.ImageArrDaoImpl"></bean>
+    <bean id="appArrDao" class="com.yinhai.cloud.module.resource.cluster.impl.dao.impl.AppArrDaoImpl"></bean>
+
+    <bean id="overviewBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.overview.impl.bpo.OverviewBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <!-- ceph -->
+    <bean id="cephNodeDao" class="com.yinhai.cloud.module.resource.nodes.impl.dao.impl.CephNodeDaoImpl"></bean>
+    <bean id="cephClusterDao" class="com.yinhai.cloud.module.resource.cluster.impl.dao.impl.ICephClusterDaoImpl"></bean>
+    <bean id="cephPoolDao" class="com.yinhai.cloud.module.resource.cluster.impl.dao.impl.ICephPoolDaoImpl"></bean>
+    <bean id="cephNodeBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.nodes.impl.bpo.CephNodeBpoImpl">
+            </bean>
+        </property>
+    </bean>
+    <bean id="cephClusterBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.cluster.impl.bpo.ICephClusterBpoIpml">
+            </bean>
+        </property>
+    </bean>
+    <bean id="cephPoolBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.resource.cluster.impl.bpo.ICephPoolBpoIpml">
+            </bean>
+        </property>
+    </bean>
+</beans>

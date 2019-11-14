@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.nodes.impl.po.CephNodeInfoPo" table="CLOUD_CEPH_INFO">
+        <id name="nodeId" type="java.lang.Long">
+            <column name="CEPHNODE_ID" length="10"/>
+            <generator class="native"/>
+        </id>
+        <property name="nodeName" type="java.lang.String">
+            <column name="CEPHNODE_NAME"/>
+        </property>
+
+        <property name="nodeType" type="java.lang.String">
+            <column name="CEPHNODE_TYPE"/>
+        </property>
+
+        <property name="nodeIP" type="java.lang.String">
+            <column name="CEPHNODE_IP"/>
+        </property>
+
+        <property name="nodeUser" type="java.lang.String">
+            <column name="CEPHNODE_USER"/>
+        </property>
+        <property name="nodePassword" type="java.lang.String">
+            <column name="CEPHNODE_PASSWORD"/>
+        </property>
+
+        <property name="nodeSSHPort" type="java.lang.Integer">
+            <column name="NODE_SSH_PORT" length="64"/>
+        </property>
+
+        <property name="nodeRunningState" type="java.lang.Integer">
+            <column name="NODE_RUNNING_STAT" length="64"/>
+        </property>
+
+        <property name="nodeCreateDate" type="timestamp">
+            <column name="NODE_CREATE_DATE" length="20"/>
+        </property>
+
+        <property name="nodeCreateUser" type="java.lang.String">
+            <column name="NODE_CREATE_USER" length="20"/>
+        </property>
+
+        <property name="nodePath" type="java.lang.String">
+            <column name="NODE_PATH" length="255"/>
+        </property>
+
+        <property name="nodeDiskToTalMb" type="java.lang.Double">
+            <column name="NODE_DISK_TOTALMB"/>
+        </property>
+
+        <property name="nodeDiskToTalMbIdealState" type="java.lang.Double">
+            <column name="NODE_DISK_TOTALMB_IDEAL_STATE"/>
+        </property>
+
+        <property name="clusterId" type="java.lang.Long">
+            <column name="CEPH_CLUSTER_ID"/>
+        </property>
+
+        <property name="cephOperation" type="java.lang.Integer">
+            <column name="CEPH_OPERATIONING"/>
+        </property>
+
+        <property name="isMds" type="java.lang.Integer">
+            <column name="NODE_IS_MDS"/>
+        </property>
+
+        <property name="nodeCName" type="java.lang.String">
+            <column name="CEPHNODE_CNAME" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

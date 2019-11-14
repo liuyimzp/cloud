@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="test">
+
+	<!-- 通过时间段查询假期 -->
+	<select id="selectNameById" parameterClass="int" resultClass="java.lang.String">
+		SELECT u.NAME FROM TAUSER u where u.USERID = #id#
+	</select>
+
+	<delete id="deleteYab003" parameterClass="java.util.HashMap">
+		DELETE FROM DP.TAYAB003LEVELMG WHERE 1= 1
+		<isNotEmpty property="pyab003">
+			AND PYAB003 = #pyab003#
+		</isNotEmpty>
+		<isNotEmpty property="yab003">
+			And YAB003 = #yab003#
+		</isNotEmpty>
+	</delete>
+
+
+
+	<!-- 表aa10 (码值表) 的所有SQL语句映射配置表  生成时间：2016-11-16 15:43:15 -->
+	<typeAlias alias="Aa10Domain" type="com.yinhai.modules.codetable.domain.po.AA10Po"/>
+
+	<!--TA+BEGIN-->
+	<!-- 查询一批数据的查询 -->
+	<select id="getList" parameterClass="map" resultClass="Aa10Domain">
+		SELECT
+		a.aaa100 as aaa100,   <!-- 类别编码     -->
+		a.aaa101 as aaa101,   <!-- 类别名称     -->
+		a.aaa102 as aaa102,   <!-- 条目码值     -->
+		a.aaa103 as aaa103,   <!-- 条目名称     -->
+		a.yab003 as yab003,
+		a.aae120 as aae120,
+		a.ver as ver
+		FROM aa10 a
+		WHERE 1=1
+		<isNotEmpty prepend="AND" property="aaa100">   <!-- 类别编码     -->
+			a.aaa100 = #aaa100:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="aaa101">   <!-- 类别名称     -->
+			a.aaa101 = #aaa101:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="aaa102">   <!-- 条目码值     -->
+			a.aaa102 = #aaa102:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="aaa103">   <!-- 条目名称     -->
+			a.aaa103 = #aaa103:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="yab003">
+			a.yab003 = #yab003:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="aae120">
+			a.aae120 = #aae120:VARCHAR#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="ver">
+			a.ver = #ver:INTEGER#
+		</isNotEmpty>
+	</select>
+
+	<!-- 通过主键进行查询 -->
+	<select id="get" parameterClass="map" resultClass="Aa10Domain">
+		SELECT
+		a.aaa100 as aaa100,   <!-- 类别编码     -->
+		a.aaa101 as aaa101,   <!-- 类别名称     -->
+		a.aaa102 as aaa102,   <!-- 条目码值     -->
+		a.aaa103 as aaa103,   <!-- 条目名称     -->
+		a.yab003 as yab003,
+		a.aae120 as aae120,
+		a.ver as ver
+		FROM aa10 a
+		WHERE 1 = 1
+		<![CDATA[	   AND a.aaa100 = #aaa100#    ]]>    <!-- 类别编码 -->
+		<![CDATA[	   AND a.aaa102 = #aaa102#    ]]>    <!-- 条目码值 -->
+	</select>
+
+	<!-- 通过主键修改数据库记录，domain的每一个字段都要设值，如果是null，则数据库中也是null -->
+	<update id="update" parameterClass="map">
+		UPDATE aa10 SET
+		aaa101 = #aaa101:VARCHAR#,  <!-- 类别名称     -->
+		aaa103 = #aaa103:VARCHAR#,  <!-- 条目名称     -->
+		yab003 = #yab003:VARCHAR#,
+		aae120 = #aae120:VARCHAR#,
+		ver = #ver:INTEGER#
+		WHERE 1 = 1
+		<![CDATA[	   AND aaa100 = #aaa100#    ]]>    <!-- 类别编码 -->
+		<![CDATA[	   AND aaa102 = #aaa102#    ]]>    <!-- 条目码值 -->
+	</update>
+
+	<!-- 通过DTO更新单条数据,主键不能为空，只修改你设定值得字段，并且值不为null或"" -->
+	<update id="updateNotEmpty" parameterClass="map">
+		UPDATE aa10
+		<dynamic prepend="SET">
+			<isNotEmpty prepend="," property="aaa101">   <!-- 类别名称     -->
+				aaa101 = #aaa101:VARCHAR#
+			</isNotEmpty>
+			<isNotEmpty prepend="," property="aaa103">   <!-- 条目名称     -->
+				aaa103 = #aaa103:VARCHAR#
+			</isNotEmpty>
+			<isNotEmpty prepend="," property="yab003">
+				yab003 = #yab003:VARCHAR#
+			</isNotEmpty>
+			<isNotEmpty prepend="," property="aae120">
+				aae120 = #aae120:VARCHAR#
+			</isNotEmpty>
+			<isNotEmpty prepend="," property="ver">
+				ver = #ver:INTEGER#
+			</isNotEmpty>
+		</dynamic>
+		WHERE 1 = 1
+		<![CDATA[	   AND aaa100 = #aaa100#    ]]>    <!-- 类别编码 -->
+		<![CDATA[	   AND aaa102 = #aaa102#    ]]>    <!-- 条目码值 -->
+	</update>
+
+	<!-- 通过DTO更新单条数据，主键不能为空，只修改你设定值得字段，值可以为null或"" -->
+	<update id="updateAvailable" parameterClass="map">
+		UPDATE aa10
+		<dynamic prepend="SET">
+			<isPropertyAvailable prepend="," property="aaa101">   <!-- 类别名称     -->
+				aaa101 = #aaa101:VARCHAR#
+			</isPropertyAvailable>
+			<isPropertyAvailable prepend="," property="aaa103">   <!-- 条目名称     -->
+				aaa103 = #aaa103:VARCHAR#
+			</isPropertyAvailable>
+			<isPropertyAvailable prepend="," property="yab003">
+				yab003 = #yab003:VARCHAR#
+			</isPropertyAvailable>
+			<isPropertyAvailable prepend="," property="aae120">
+				aae120 = #aae120:VARCHAR#
+			</isPropertyAvailable>
+			<isPropertyAvailable prepend="," property="ver">
+				ver = #ver:INTEGER#
+			</isPropertyAvailable>
+		</dynamic>
+		WHERE 1 = 1
+		<![CDATA[	   AND aaa100 = #aaa100#    ]]>    <!-- 类别编码 -->
+		<![CDATA[	   AND aaa102 = #aaa102#    ]]>    <!-- 条目码值 -->
+	</update>
+
+	<!--通过主键删除单条数据-->
+	<delete id="delete" parameterClass="map">
+		DELETE  FROM  aa10
+		WHERE 1 = 1
+		<![CDATA[	   AND aaa100 = #aaa100#    ]]>    <!-- 类别编码 -->
+		<![CDATA[	   AND aaa102 = #aaa102#    ]]>    <!-- 条目码值 -->
+	</delete>
+
+	<!--TA+END-->
+
+</sqlMap>

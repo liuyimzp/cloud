@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.application.impl.po.AppServicePo" table="CLOUD_APP_SERVICE"
+           dynamic-insert="true"
+           dynamic-update="true">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" length="10"/>
+            <generator class="native"/>
+        </id>
+        <property name="appId" type="java.lang.Long">
+            <column name="APPID" length="10"/>
+        </property>
+        <property name="serviceType" type="java.lang.String">
+            <column name="SERVICETYPE" length="6"/>
+        </property>
+        <property name="innerPort" type="java.lang.Integer">
+            <column name="INNERPORT" length="6"/>
+        </property>
+        <property name="mappingPort" type="java.lang.Integer">
+            <column name="MAPPINGPORT" length="6"/>
+        </property>
+        <property name="protocolType" type="java.lang.String">
+            <column name="PROTOCOLTYPE" length="6"/>
+        </property>
+    </class>
+</hibernate-mapping>

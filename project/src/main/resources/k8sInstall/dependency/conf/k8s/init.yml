@@ -1,0 +1,17 @@
+apiVersion: kubeadm.k8s.io/v1alpha1
+kind: MasterConfiguration
+api:
+  advertiseAddress: 192.168.17.187
+etcd: 
+  endpoints: 
+  - http://192.168.17.187:2379
+  caFile: /etc/etcd/ssl/ca.pem  #配置etcd的https认证文件
+  certFile: /etc/etcd/ssl/client.pem
+  keyFile: /etc/etcd/ssl/client-key.pem
+networking:
+  podSubnet: 10.244.0.0/16
+kubernetesVersion: 1.10.3
+apiServerCertSANs: #这里要加上Haproxy的宿主机IP
+- 192.168.17.187
+- 127.0.0.1
+- 10.244.0.1

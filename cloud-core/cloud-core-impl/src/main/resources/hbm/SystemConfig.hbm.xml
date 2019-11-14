@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.core.impl.po.SystemConfigPo" table="CLOUD_SYS_PROPERTY" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="propKey" type="java.lang.String">
+            <column name="PROP_KEY" length="100"/>
+        </id>
+        <property name="propValue" type="java.lang.String">
+            <column name="PROP_VALUE" length="100"/>
+        </property>
+        <property name="propComment" type="java.lang.String">
+            <column name="PROP_COMMENT" length="100"/>
+        </property>
+        <property name="propUpdateTime" type="java.lang.String">
+            <column name="PROP_UPDATE_TIME" length="100"/>
+        </property>
+        <property name="propCreateUser" type="java.lang.String">
+            <column name="PROP_CREATE_USER" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

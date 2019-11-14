@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.repertory.impl.po.AppImagePo" table="CLOUD_APP_IMAGE" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" length="10"/>
+            <generator class="native"/>
+        </id>
+        <property name="repertoryId" type="java.lang.Long">
+            <column name="REPERTORYID" length="10"/>
+        </property>
+        <property name="createTime" type="java.sql.Timestamp">
+            <column name="CREATETIME"/>
+        </property>
+        <property name="version" type="java.lang.String">
+            <column name="VERSION" length="20"/>
+        </property>
+
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" length="10"/>
+        </property>
+        <property name="diyOperateSystem" type="java.lang.String">
+            <column name="DIY_OS" length="50"/>
+        </property>
+        <property name="diyType" type="java.lang.String">
+            <column name="DIY_TYPE" length="50"/>
+        </property>
+        <property name="diyJdkVersion" type="java.lang.String">
+            <column name="DIY_JDK" length="50"/>
+        </property>
+        <property name="diyWebContainer" type="java.lang.String">
+            <column name="DIY_WEB_CONTAINER" length="50"/>
+        </property>
+
+        <property name="diyBuildLog" type="java.lang.String">
+            <column name="DIY_BUILD_LOG"/>
+        </property>
+
+        <property name="effective" type="java.lang.String">
+            <column name="EFFECTIVE" length="1"/>
+        </property>
+
+        <property name="downloading" type="java.lang.Integer">
+            <column name="DOWNLOADING"/>
+        </property>
+
+        <property name="downloadNum" type="java.lang.Integer">
+            <column name="DOWNLOADNUM"/>
+        </property>
+    </class>
+</hibernate-mapping>

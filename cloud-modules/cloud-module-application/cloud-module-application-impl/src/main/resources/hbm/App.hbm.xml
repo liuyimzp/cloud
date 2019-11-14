@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.application.impl.po.AppPo" table="CLOUD_APP" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" length="10"/>
+            <generator class="native"/>
+        </id>
+        <property name="clusterId" type="java.lang.Long">
+            <column name="CLUSTER_ID" length="10"/>
+        </property>
+        <property name="namespaceId" type="java.lang.Long">
+            <column name="NAMESPACEID" length="10"/>
+        </property>
+        <property name="nodeId" type="java.lang.Long">
+            <column name="nodeid" length="20"/>
+        </property>
+        <property name="appName" type="java.lang.String">
+            <column name="APPNAME" length="50"/>
+        </property>
+        <property name="middleWareType" type="java.lang.String">
+            <column name="MIDDLEWARETYPE" length="6"/>
+        </property>
+        <property name="appStatus" type="java.lang.String">
+            <column name="APPSTATUS" length="6"/>
+        </property>
+        <property name="appIdentify" type="java.lang.String">
+            <column name="APPIDENTIFY" length="50"/>
+        </property>
+        <property name="instanceNum" type="java.lang.Integer">
+            <column name="INSTANCENUM" length="3"/>
+        </property>
+        <property name="appStrategy" type="java.lang.String">
+            <column name="APPSTRATEGY" length="6"/>
+        </property>
+        <property name="appDesc" type="java.lang.String">
+            <column name="APPDESC" length="1000"/>
+        </property>
+        <property name="appType" type="java.lang.String">
+            <column name="APPTYPE" length="6"/>
+        </property>
+        <property name="createUser" type="java.lang.Long">
+            <column name="CREATEUSER" length="10"/>
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATETIME" length="7"/>
+        </property>
+        <property name="recordLog" type="java.lang.Character">
+            <column name="RECORDLOG" />
+        </property>
+        <property name="appDiyFile" type="java.lang.String">
+            <column name="APPDIYFILE" />
+        </property>
+        <property name="middleware_configfile" type="java.lang.String">
+            <column name="middleware_configfile" />
+        </property>
+        <property name="appRestartPolicy" type="java.lang.String">
+            <column name="APPRESTARTPOLICY" />
+        </property>
+        <property name="appSchedule" type="java.lang.String">
+            <column name="APPSCHEDULE" />
+        </property>
+        <property name="sAppSchedule" type="java.lang.String">
+            <column name="SAPPSCHEDULE" />
+        </property>
+        <property name="beginTime" type="java.util.Date">
+            <column name="BEGINTIME" length="7"/>
+        </property>
+    </class>
+</hibernate-mapping>

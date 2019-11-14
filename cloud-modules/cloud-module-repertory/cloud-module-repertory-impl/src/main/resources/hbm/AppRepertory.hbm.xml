@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.repertory.impl.po.AppRepertoryPo" table="CLOUD_APP_REPERTORY"
+           dynamic-insert="true"
+           dynamic-update="true">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" length="10"/>
+            <generator class="native"/>
+        </id>
+        <property name="groupId" type="java.lang.Long">
+            <column name="GROUPID" length="10"/>
+        </property>
+        <property name="appName" type="java.lang.String">
+            <column name="APPNAME" length="50"/>
+        </property>
+        <property name="identify" type="java.lang.String">
+            <column name="IDENTIFY" length="30"/>
+        </property>
+        <property name="appType" type="java.lang.String">
+            <column name="APPTYPE" length="6"/>
+        </property>
+        <property name="imagePath" type="java.lang.String">
+            <column name="IMAGEPATH" length="100"/>
+        </property>
+        <property name="appDesc" type="java.lang.String">
+            <column name="APPDESC" length="1000"/>
+        </property>
+        <property name="businessArea" type="java.lang.String">
+            <column name="BUSINESSAREA" length="6"/>
+        </property>
+    </class>
+</hibernate-mapping>

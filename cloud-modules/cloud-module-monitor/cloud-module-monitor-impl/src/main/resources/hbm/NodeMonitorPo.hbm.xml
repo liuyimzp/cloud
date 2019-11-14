@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.monitor.impl.po.NodeMonitorPo" table="cloud_monitor_node">
+        <id name="nodeId" type="java.lang.Long">
+            <column name="node_id" length="20"/>
+        </id>
+        <property name="clusterId" type="java.lang.Long">
+            <column name="cluster_id" length="20"/>
+        </property>
+        <property name="nodeOs" type="java.lang.String">
+            <column name="node_os" length="100"/>
+        </property>
+        <property name="nodeMaxPod" type="java.lang.Integer">
+            <column name="node_max_pod"/>
+        </property>
+        <property name="nodeUsedPod" type="java.lang.Integer">
+            <column name="node_used_pod"/>
+        </property>
+        <property name="nodeStatus" type="java.lang.Integer">
+            <column name="node_status"/>
+        </property>
+        <property name="nodeCPUAvailability" type="java.lang.Double">
+            <column name="node_cpuavailability"/>
+        </property>
+        <property name="nodeMemoryAvailability" type="java.lang.Double">
+            <column name="node_memoryavailability"/>
+        </property>
+        <property name="biztime" type="java.util.Date">
+            <column name="biztime"/>
+        </property>
+    </class>
+</hibernate-mapping>

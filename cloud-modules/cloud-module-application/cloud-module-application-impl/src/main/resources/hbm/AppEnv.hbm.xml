@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.application.impl.po.AppEnvPo" table="CLOUD_APP_ENV" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" length="10"/>
+            <generator class="native"/>
+        </id>
+        <property name="appId" type="java.lang.Long">
+            <column name="APPID" length="10"/>
+        </property>
+        <property name="envKey" type="java.lang.String">
+            <column name="ENVKEY" length="20"/>
+        </property>
+        <property name="envValue" type="java.lang.String">
+            <column name="ENVVALUE" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

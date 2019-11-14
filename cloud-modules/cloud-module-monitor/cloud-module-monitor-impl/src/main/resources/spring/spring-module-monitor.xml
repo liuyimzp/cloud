@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 集群监控 -->
+    <bean id="clusterMonitorDao" class="com.yinhai.cloud.module.monitor.impl.dao.impl.IClusterMonitorDaoImpl"></bean>
+    <bean id="clusterMonitorBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.monitor.impl.bpo.IClusterMonitorBpoImpl">
+
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 节点监控 -->
+    <bean id="nodeMonitorDao" class="com.yinhai.cloud.module.monitor.impl.dao.impl.INodeMonitorDaoImpl"></bean>
+    <bean id="nodeMonitorBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.monitor.impl.bpo.INodeMonitorBpoImpl">
+
+            </bean>
+        </property>
+    </bean>
+
+</beans>

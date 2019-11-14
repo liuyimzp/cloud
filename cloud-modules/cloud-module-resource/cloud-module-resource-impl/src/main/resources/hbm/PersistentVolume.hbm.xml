@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.pv.impl.po.PvPo" table="CLOUD_PERSISTENT_VOLUME" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="volumeId" type="java.lang.Long">
+            <column name="VOLUME_ID" length="20"/>
+            <generator class="native"/>
+        </id>
+        <property name="clusterId" type="java.lang.String">
+            <column name="CLUSTER_ID" length="20"/>
+        </property>
+        <property name="volumeDisplayName" type="java.lang.String">
+            <column name="VOLUME_DISPLAY_NAME" length="50"/>
+        </property>
+        <property name="volumeUuid" type="java.lang.String">
+            <column name="VOLUME_UUID" length="20"/>
+        </property>
+        <property name="volumeEnableState" type="java.lang.String">
+            <column name="VOLUME_ENABLE_STATE" length="2"/>
+        </property>
+        <property name="volumeType" type="java.lang.String">
+            <column name="VOLUME_TYPE" length="2"/>
+        </property>
+        <property name="volumeCloudStorageId" type="java.lang.Long">
+            <column name="VOLUME_CLOUD_STORAGE_ID" length="64"/>
+        </property>
+        <property name="volumeStoragePath" type="java.lang.String">
+            <column name="VOLUME_STORAGE_PATH" length="200"/>
+        </property>
+        <property name="volumeMaxSpace" type="java.lang.Integer">
+            <column name="VOLUME_MAX_SPACE" />
+        </property>
+
+        <property name="volumeCreateDate" type="timestamp">
+            <column name="VOLUME_CREATE_DATE" length="20"/>
+        </property>
+        <property name="volumeCreateUser" type="java.lang.String">
+            <column name="VOLUME_CREATE_USER" length="20"/>
+        </property>
+        <property name="volumeAvailableSpace" type="java.lang.Integer">
+            <column name="VOLUME_AVAILABLE_SPACE"/>
+        </property>
+        <property name="cephPoolId" type="java.lang.Long">
+            <column name="VOLUME_CEPH_POOL" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yinhai.cloud</groupId>
+    <artifactId>cloud</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>cloud-core</module>
+        <module>cloud-modules</module>
+        <module>project</module>
+        <module>cloud-vue</module>
+    </modules>
+
+    <properties>
+        <cloud-version>0.1-SNAPSHOT</cloud-version>
+        <ta3-version>4.0.1-RELEASE</ta3-version>
+
+        <jdk.version>1.8</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>4.3.7.RELEASE</spring.version>
+        <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+        <spring-security.version>4.2.2.RELEASE</spring-security.version>
+        <spring-security-cas-client.version>3.0.8.RELEASE</spring-security-cas-client.version>
+        <spring-data-mongodb.version>1.8.4.RELEASE</spring-data-mongodb.version>
+        <spring-session.version>1.1.0.RELEASE</spring-session.version>
+        <spring-test.version>4.3.7.RELEASE</spring-test.version>
+        <!-- 数据持久层 -->
+        <hibernate.version>5.0.7.Final</hibernate.version>
+        <ibatis.version>2.0</ibatis.version>
+        <!-- jdbc -->
+        <ojdbc.version>8</ojdbc.version>
+        <mysql-connector-java.version>5.1.38</mysql-connector-java.version>
+        <gbase.version>1.0</gbase.version>
+        <!-- 数据源 -->
+        <druid.version>1.1.5</druid.version>
+        <!-- 分布式 -->
+        <dubbo.version>2.8.5.7</dubbo.version>
+        <zookeeper.version>3.4.9</zookeeper.version>
+        <cxf.version>3.0.9</cxf.version>
+        <disruptor.version>3.3.4</disruptor.version>
+        <jgroups.version>3.6.11.Final</jgroups.version>
+        <curator.version>2.12.0</curator.version>
+        <!-- 消息系列 -->
+        <activemq.version>5.7.0</activemq.version>
+        <dwr.version>3.0.1-RELEASE</dwr.version>
+        <!-- 日志系列 -->
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.18</slf4j.version>
+        <logback-classic.version>1.1.7</logback-classic.version>
+        <logback-core.version>1.1.7</logback-core.version>
+        <log4j-over-slf4j.version>1.7.18</log4j-over-slf4j.version>
+        <jcl-over-slf4j.version>1.7.18</jcl-over-slf4j.version>
+        <jul-to-slf4j.version>1.7.18</jul-to-slf4j.version>
+        <logback-redis-appender.version>1.1.5</logback-redis-appender.version>
+        <!-- 缓存系列 -->
+        <ehcache.version>3.5.2</ehcache.version>
+        <spring-data-redis.version>1.6.4.RELEASE</spring-data-redis.version>
+        <jedis.version>2.9.0</jedis.version>
+        <coherence.version>2.0</coherence.version>
+        <commons-pool2.version>2.4.2</commons-pool2.version>
+        <ehcache-web.version>2.0.4</ehcache-web.version>
+        <ehcache-spring-annotations.version>1.2.0</ehcache-spring-annotations.version>
+        <!-- 文件上传 -->
+        <commons-io.version>2.4</commons-io.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
+        <!-- 定时任务 -->
+        <quartz.version>2.2.2</quartz.version>
+        <!-- elasticjob -->
+        <elasticjob.version>2.1.5</elasticjob.version>
+        <!-- 序列 -->
+        <kryo.version>2.24.0</kryo.version>
+        <kryo-serializers.version>0.28</kryo-serializers.version>
+        <fst.version>2.48</fst.version>
+        <!-- javaee环境 -->
+        <javaee-api.version>7.0</javaee-api.version>
+        <jstl.version>1.2</jstl.version>
+        <jboss.version>1.0.0.Final</jboss.version>
+        <!-- office文档操作 -->
+        <poi-ooxml.version>3.14</poi-ooxml.version>
+        <poi.version>3.14</poi.version>
+        <jxl.version>2.6.12</jxl.version>
+        <jxls-core.version>0.9.9</jxls-core.version>
+        <jdom.version>1.1.3</jdom.version>
+        <!-- 新版本jxls -->
+        <jxls.version>2.3.0</jxls.version>
+        <jxls-poi.version>1.0.11</jxls-poi.version>
+        <!-- json处理工具 -->
+        <fastjson.version>1.2.60</fastjson.version>
+        <!-- RSA加密 -->
+        <bcprov-jdk15.version>1.46</bcprov-jdk15.version>
+        <bcpg-jdk15on.version>1.50</bcpg-jdk15on.version>
+        <!-- 工具类 -->
+        <commons-beanutils-core.version>1.9.2</commons-beanutils-core.version>
+        <commons-codec.version>1.10</commons-codec.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <guava.verison>19.0</guava.verison>
+        <!-- 拼音工具类 -->
+        <pinyin4j.version>2.5.0</pinyin4j.version>
+        <!-- Http操作 -->
+        <httpclient.version>4.5.2</httpclient.version>
+        <UserAgentUtils.version>1.2.4</UserAgentUtils.version>
+        <!-- 单元测试 -->
+        <junit.version>4.12</junit.version>
+        <!-- 日志分析 -->
+        <elasticsearch.version>2.3.1</elasticsearch.version>
+        <!-- 图形验证码 -->
+        <nl.captcha.simplecaptcha.version>1.1.1</nl.captcha.simplecaptcha.version>
+        <!-- 织入器 -->
+        <aspectjweaver.version>1.7.4</aspectjweaver.version>
+        <!-- leaf的id生成器 -->
+        <leaf-idgenerator.version>0.0.3</leaf-idgenerator.version>
+        <!-- freemarker版本 -->
+        <freemarker.version>2.3.22</freemarker.version>
+        <!-- ueditor -->
+        <ueditor.version>1.1.1</ueditor.version>
+        <json.version>20160212</json.version>
+        <!-- runqian -->
+        <runqian-report.version>2.0</runqian-report.version>
+        <runqian-webutil.version>2.0</runqian-webutil.version>
+        <jaci-codec.version>2.0</jaci-codec.version>
+        <spring-session-data-redis.version>1.1.1.RELEASE</spring-session-data-redis.version>
+        <itext2_rq.version>2.0</itext2_rq.version>
+        <!-- 页面还原 ftpclient -->
+        <commons-net.version>3.5</commons-net.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <esapi.version>2.1.0.1</esapi.version>
+        <release.plugin.version>2.5.3</release.plugin.version>
+        <!-- 分布式配置-->
+        <archaius.version>0.7.5</archaius.version>
+        <commons-configuration.vesion>1.8</commons-configuration.vesion>
+        <!--熔断-->
+        <hystrix.verison>1.5.12</hystrix.verison>
+        <metrics.version>3.2.6</metrics.version>
+    </properties>
+
+    <!--<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.neoremind.sshxcute</groupId>
+                <artifactId>sshxcute</artifactId>
+                <version>1.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>-->
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.9</version>
+        </dependency>
+        <!-- 核心 必选不显示 -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-core-common-ta3</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- 前端 必选0 -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-core-app-ta3</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- 基础后端 必选0 -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-core-domain-ta3</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- 基础数据源 必选0 -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-datasource-base</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- Spring Security安全模块 必选 -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-security-spring-app</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- 权限模块 必选 -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-authority-ta3-app</artifactId>
+            <version>4.1.0-RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-sysapp-ta3-app</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-configcenter-distribute</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- 前端组件模块 必选0-->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-websource</artifactId>
+            <version>4.1.0-1.0.1-RELEASE</version>
+            <type>war</type>
+        </dependency>
+        <!-- 组织机构模块 必选 -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-org-ta3-app</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- 缓存基础模块 必选-->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-cache-ta3-app</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- 码表模块 必选-->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-codetable-ta3-app</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+
+        <!-- 缓存配置 必须 可选方案 ehcache、redis、coherence -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-cache-ehcache</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!-- 定时服务模块 可选 -->
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ta3-modules-schedule-ta3-app</artifactId>
+            <version>4.1.0-RELEASE</version>
+        </dependency>
+        <!--必选  0-->
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jstl-impl</artifactId>
+            <version>1.2</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>servlet-api</artifactId>
+                    <groupId>javax.servlet</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>3.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-databinding-aegis</artifactId>
+            <version>3.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>3.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>8</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.17.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>jsr250-api</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yinhai</groupId>
+            <artifactId>sshxcute</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <!--kubernetes Java Api-->
+        <dependency>
+            <groupId>io.kubernetes</groupId>
+            <artifactId>client-java</artifactId>
+            <version>2.0.0</version>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcprov-ext-jdk15on</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcpkix-jdk15on</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.jdbc.url>jdbc:mysql:@//192.168.17.18:3306/sonarqube</sonar.jdbc.url>
+                <sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+                <sonar.jdbc.username>sonar</sonar.jdbc.username>
+                <sonar.jdbc.password>sonar</sonar.jdbc.password>
+                <sonar.host.url>http://192.168.17.18:9000/sonar</sonar.host.url> <!-- Sonar服务器访问地址 -->
+                <sonar.sources>src/main</sonar.sources>
+                <sonar.java.binaries>target</sonar.java.binaries>
+                <sonar.java.source>1.8</sonar.java.source>
+            </properties>
+        </profile>
+    </profiles>
+</project>

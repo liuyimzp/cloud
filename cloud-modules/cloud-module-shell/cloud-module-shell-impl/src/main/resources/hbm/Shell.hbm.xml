@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.shell.po.ShellPo" table="CLOUD_SHELL" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="shellId" type="java.lang.Long">
+            <column name="SHELL_ID" length="20"/>
+            <generator class="native"/>
+        </id>
+        <property name="shellName" type="java.lang.String">
+            <column name="SHELL_NAME" length="20"/>
+        </property>
+        <property name="shellUid" type="java.lang.String">
+            <column name="SHELL_UID" length="20"/>
+        </property>
+        <property name="shellType" type="java.lang.String">
+            <column name="SHELL_TYPE" length="20"/>
+        </property>
+        <property name="shellContent" type="java.lang.String">
+            <column name="SHELL_CONTENT"/>
+        </property>
+    </class>
+</hibernate-mapping>

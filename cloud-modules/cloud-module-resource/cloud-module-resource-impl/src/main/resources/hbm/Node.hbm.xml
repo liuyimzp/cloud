@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.nodes.impl.po.NodeBasicInfoPo" table="CLOUD_NODE_INFO"
+           dynamic-insert="true"
+           dynamic-update="true">
+        <id name="nodeId" type="java.lang.Long">
+            <column name="NODE_ID" length="20"/>
+            <generator class="native"/>
+        </id>
+        <property name="nodeName" type="java.lang.String">
+            <column name="NODE_NAME" length="20"/>
+        </property>
+        <property name="clusterId" type="java.lang.Long">
+            <column name="CLUSTER_ID" length="20"/>
+        </property>
+        <property name="nodeType" type="java.lang.String">
+            <column name="NODE_TYPE" length="2"/>
+        </property>
+        <property name="nodeAsChild" type="java.lang.String">
+            <column name="NODE_AS_CHILD" length="2"/>
+        </property>
+        <property name="nodeIP" type="java.lang.String">
+            <column name="NODE_IP" length="64"/>
+        </property>
+        <property name="nodeSSHPort" type="java.lang.Integer">
+            <column name="NODE_SSH_PORT" length="64"/>
+        </property>
+        <property name="nodeUser" type="java.lang.String">
+            <column name="NODE_USER" length="20"/>
+        </property>
+        <property name="nodePassword" type="java.lang.String">
+            <column name="NODE_PASSWORD" length="20"/>
+        </property>
+
+        <property name="nodeCreateDate" type="timestamp">
+            <column name="NODE_CREATE_DATE" length="20"/>
+        </property>
+        <property name="nodeCreateUser" type="java.lang.String">
+            <column name="NODE_CREATE_USER" length="20"/>
+        </property>
+        <property name="nodeInitState" type="java.lang.Integer">
+            <column name="NODE_INIT_STATE"/>
+        </property>
+        <property name="nodeOperateState" type="java.lang.Integer">
+            <column name="NODE_OPERATE_STATE"/>
+        </property>
+        <property name="nodeRunningState" type="java.lang.Integer">
+            <column name="NODE_RUNNING_STATE"/>
+        </property>
+
+        <property name="nodeJoined" type="java.lang.Integer">
+            <column name="NODE_JOINED"/>
+        </property>
+
+
+        <property name="nodeCpuAmount" type="java.lang.Integer">
+            <column name="NODE_CPU_AMOUNT"/>
+        </property>
+        <property name="nodeAllocatableCpu" type="java.lang.Double">
+            <column name="NODE_ALLOCATABLE_CPU"/>
+        </property>
+        <property name="nodeSystemCpu" type="java.lang.Double">
+            <column name="node_system_cpu"/>
+        </property>
+        <property name="nodeMemMb" type="java.lang.Double">
+            <column name="NODE_MEM_MB"/>
+        </property>
+        <property name="nodeSysMemMb" type="java.lang.Double">
+            <column name="NODE_SYSTEM_MEMROY"/>
+        </property>
+        <property name="nodeAllocatableMemory" type="java.lang.Double">
+            <column name="NODE_ALLOCATABLE_MEMORY"/>
+        </property>
+        <property name="nodeMemAvailable" type="java.lang.Double">
+            <column name="NODE_MEM_AVAILABLE"/>
+        </property>
+        <property name="nodeDiskTotalMb" type="java.lang.Double">
+            <column name="NODE_DISK_TOTAL_MB"/>
+        </property>
+        <property name="nodeDiskUsableMb" type="java.lang.Double">
+            <column name="NODE_DISK_USABLE_MB"/>
+        </property>
+        <property name="nodeDiskUsedMb" type="java.lang.Double">
+            <column name="NODE_DISK_USED_MB"/>
+        </property>
+
+        <property name="keepalivedMaster" column="KEEPALIVED_MASTER" type="org.hibernate.type.NumericBooleanType"/>
+
+
+    </class>
+</hibernate-mapping>

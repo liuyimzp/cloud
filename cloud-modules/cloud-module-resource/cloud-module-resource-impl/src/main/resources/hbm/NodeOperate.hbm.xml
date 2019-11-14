@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.nodes.impl.po.NodeOperatePo" table="CLOUD_NODE_OPERATE_STACK"
+           dynamic-insert="true"
+           dynamic-update="true">
+        <id name="operateId" type="java.lang.Long">
+            <column name="OPERATE_ID"/>
+            <generator class="native"/>
+        </id>
+
+        <property name="nodeId" type="java.lang.Long">
+            <column name="NODE_ID"/>
+        </property>
+        <property name="operateCode" type="java.lang.String">
+            <column name="OPERATE_CODE"/>
+        </property>
+        <property name="operateLog" type="java.lang.String">
+            <column name="OPERATE_LOG"/>
+        </property>
+        <property name="operateState" type="java.lang.Integer">
+            <column name="OPERATE_STATE"/>
+        </property>
+        <property name="operateStartTime" type="java.lang.String">
+            <column name="OPERATE_START_TIME"/>
+        </property>
+        <property name="operateFinishTime" type="java.lang.String">
+            <column name="OPERATE_FINISH_TIME"/>
+        </property>
+        <property name="operateUser" type="java.lang.String">
+            <column name="OPERATE_USER"/>
+        </property>
+
+        <property name="operateFinishedPercentage" type="java.lang.Integer">
+            <column name="OPERATE_FINISHED_PERCENTAGE"/>
+        </property>
+        <property name="operateRunningServer" type="java.lang.String">
+            <column name="OPERATE_RUNNING_SERVER"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

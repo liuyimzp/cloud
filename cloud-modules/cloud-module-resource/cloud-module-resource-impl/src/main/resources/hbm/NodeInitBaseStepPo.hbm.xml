@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.nodes.impl.po.NodeInitBaseStepPo" table="CLOUD_NODE_INIT_STEP_BASE">
+        <id name="stepOrder" type="java.lang.Integer">
+            <column name="STEP_ORDER"/>
+            <generator class="native"/>
+        </id>
+        <property name="stepName" type="java.lang.String">
+            <column name="STEP_NAME"/>
+        </property>
+        <property name="stepStartStateDesc" type="java.lang.String">
+            <column name="STEP_START_STATE_DESC"/>
+        </property>
+        <property name="stepFinishStateDesc" type="java.lang.String">
+            <column name="STEP_FINISH_STATE_DESC"/>
+        </property>
+    </class>
+</hibernate-mapping>

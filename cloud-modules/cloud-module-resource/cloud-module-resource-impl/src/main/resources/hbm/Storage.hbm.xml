@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.pv.impl.po.StoragePo" table="CLOUD_STORAGE_INFO" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="storageId" type="java.lang.Long">
+            <column name="STORAGE_ID" length="20"/>
+            <generator class="native"/>
+        </id>
+        <property name="storageName" type="java.lang.String">
+            <column name="STORAGE_NAME" length="100"/>
+        </property>
+        <property name="hostIp" type="java.lang.String">
+            <column name="HOST_IP" length="15"/>
+        </property>
+        <property name="hostUserName" type="java.lang.String">
+            <column name="HOST_USERNAME" length="20"/>
+        </property>
+        <property name="hostPassword" type="java.lang.String">
+            <column name="HOST_PASSWORD" length="20"/>
+        </property>
+        <property name="hostRootPath" type="java.lang.String">
+            <column name="HOST_ROOTPATH" length="100"/>
+        </property>
+        <property name="hostNote" type="java.lang.String">
+            <column name="HOST_NOTE" length="100"/>
+        </property>
+        <property name="storageCreateUser" type="java.lang.String">
+            <column name="STORAGE_CREATE_USER" length="20"/>
+        </property>
+        <property name="storageCreateTime" type="timestamp">
+            <column name="STORAGE_CREATE_TIME" length="20"/>
+        </property>
+        <property name="hostPort" type="java.lang.Integer">
+            <column name="HOST_PORT" length="5"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="appRepertoryDao" class="com.yinhai.cloud.module.repertory.impl.dao.impl.AppRepertoryDaoImpl"></bean>
+
+    <bean id="appImageDao" class="com.yinhai.cloud.module.repertory.impl.dao.impl.AppImageDaoImpl"></bean>
+
+    <bean id="appGroupDao" class="com.yinhai.cloud.module.repertory.impl.dao.impl.AppGroupDaoImpl"></bean>
+
+    <bean id="appRepertoryBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.repertory.impl.bpo.AppRepertoryBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="appImageBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.repertory.impl.bpo.AppImageBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="appGroupBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.repertory.impl.bpo.AppGroupBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="jenkinsBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.repertory.impl.bpo.JenkinsBpoImpl">
+            </bean>
+        </property>
+    </bean>
+</beans>

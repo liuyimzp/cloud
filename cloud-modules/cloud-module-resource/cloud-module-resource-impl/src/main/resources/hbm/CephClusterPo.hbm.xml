@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.resource.cluster.impl.po.CephClusterPo" table="CLOUD_CEPHCLUSTER_INFO">
+        <id name="id" type="java.lang.Long">
+            <column name="CEPH_CLUSTER_ID" length="20"/>
+            <generator class="native"></generator>
+        </id>
+
+        <property name="name" type="java.lang.String">
+            <column name="CEPH_CLUSTER_NAME" length="100"/>
+        </property>
+
+        <property name="identify" type="java.lang.String">
+            <column name="CEPH_CLUSTER_TAG" length="100"/>
+        </property>
+
+        <property name="numOfNodes" type="java.lang.Integer">
+            <column name="CEPH_CLUSTER_NODE_NUMBER" length="20"/>
+        </property>
+
+        <property name="comment" type="java.lang.String">
+            <column name="CEPH_COMMENT" length="500"/>
+        </property>
+
+        <property name="deleting" type="java.lang.Integer">
+            <column name="CEPH_CLUSTER_IS_DELETE" length="20"/>
+        </property>
+
+        <property name="runningState" type="java.lang.Integer">
+            <column name="CEPH_RUNNING_STATE" length="20"/>
+        </property>
+
+        <property name="createDate" type="java.lang.String">
+            <column name="CEPH_CLUSTER_CREATE_DATE" length="20"/>
+        </property>
+
+        <property name="createUserId" type="java.lang.String">
+            <column name="CEPH_CLUSTER_CREATE_USER" length="20"/>
+        </property>
+
+        <property name="memoryTotal" type="java.lang.Double">
+            <column name="CEPH_CLUSTER_MEMORY_TOTAL"/>
+        </property>
+
+        <property name="memoryAvaiLabel" type="java.lang.Double">
+            <column name="CEPH_CLUSTER_MEMORY_AVAILABLE"/>
+        </property>
+
+        <property name="poolSize" type="java.lang.Integer">
+            <column name="CEPH_POOL_SIZE" length="20"/>
+        </property>
+
+        <property name="minPoolSize" type="java.lang.Integer">
+            <column name="CEPH_POOL_MIN_SIZE" length="20"/>
+        </property>
+
+        <property name="fsName" type="java.lang.String">
+            <column name="CEPH_FS_NAME" length="50"/>
+        </property>
+
+        <property name="clusterId" type="java.lang.Long">
+            <column name="CLOUSTER_ID" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

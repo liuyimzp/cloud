@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.application.impl.po.AppConfigPo" table="CLOUD_APP_CONFIG" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="appId" type="java.lang.Long">
+            <column name="APPID" length="10"/>
+        </id>
+        <property name="appImageId" type="java.lang.Long">
+            <column name="APPIMAGEID" length="10"/>
+        </property>
+        <property name="minCPU" type="java.lang.Double">
+            <column name="MINCPU"/>
+        </property>
+        <property name="maxCPU" type="java.lang.Double">
+            <column name="MAXCPU" length="6"/>
+        </property>
+        <property name="minMemory" type="java.lang.Double">
+            <column name="MINMEMORY" length="6"/>
+        </property>
+        <property name="maxMemory" type="java.lang.Double">
+            <column name="MAXMEMORY" length="6"/>
+        </property>
+        <property name="startCommand" type="java.lang.String">
+            <column name="STARTCOMMAND" length="200"/>
+        </property>
+        <property name="runCommand" type="java.lang.String">
+            <column name="RUNCOMMAND" length="200"/>
+        </property>
+        <property name="stopCommand" type="java.lang.String">
+            <column name="STOPCOMMAND" length="200"/>
+        </property>
+        <property name="appCheckTime" type="java.lang.Integer">
+            <column name="APPCHECKTIME" length="3"/>
+        </property>
+        <property name="appCheckOvertime" type="java.lang.Integer">
+            <column name="APPCHECKOVERTIME" length="3"/>
+        </property>
+        <property name="appCheckType" type="java.lang.String">
+            <column name="APPCHECKTYPE" length="6"/>
+        </property>
+        <property name="appCheckCommand" type="java.lang.String">
+            <column name="APPCHECKCOMMAND" length="200"/>
+        </property>
+        <property name="bizCheckTime" type="java.lang.Integer">
+            <column name="BIZCHECKTIME" length="3"/>
+        </property>
+        <property name="bizCheckOvertime" type="java.lang.Integer">
+            <column name="BIZCHECKOVERTIME" length="3"/>
+        </property>
+        <property name="bizCheckType" type="java.lang.String">
+            <column name="BIZCHECKTYPE" length="6"/>
+        </property>
+        <property name="bizCheckCommand" type="java.lang.String">
+            <column name="BIZCHECKCOMMAND" length="200"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="test1">
+
+	<!--<typeAlias alias="busyPo" type="com.yinhai.modules.fileimport.domain.demo.DemoDomain"/>
+	<insert id="insertBusy" parameterClass="busyPo">
+    	insert into JOB_BUSY_FREE_MG
+    	(ZKID,CRON,JOBTYPE,JOBNAME,IPS,EBFID,JOBSTATUS)
+    	values(#zkId#,#cron#,#jobType#,#jobName#,#ips#,#ebfId#,#jobStatus#)
+	</insert>-->
+	<insert id="insertBusyMap" parameterClass="java.util.HashMap">
+		insert into JOB_BUSY_FREE_MG
+		(ZKID,CRON,JOBTYPE,JOBNAME,IPS,EBFID,JOBSTATUS)
+		values(#zkId#,#cron#,#jobType#,#jobName#,#ips#,#ebfId#,#jobStatus#)
+	</insert>
+
+	<!--TA+END-->
+
+</sqlMap>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.application.impl.po.ConfigMapPo" table="CLOUD_CONFIGMAP" dynamic-insert="true"
+           dynamic-update="true">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" length="10"/>
+            <generator class="native"/>
+        </id>
+        <property name="appId" type="java.lang.Long">
+            <column name="APPID" length="10"/>
+        </property>
+        <property name="propertyName" type="java.lang.String">
+            <column name="PROPERTYNAME" length="100"/>
+        </property>
+
+        <property name="propertyValue" type="java.lang.String">
+            <column name="PROPERTYVALUE" length="200"/>
+        </property>
+
+        <property name="isEnv" type="java.lang.String">
+            <column name="ISENV" length="1"/>
+        </property>
+
+        <property name="encrypt" type="java.lang.String">
+            <column name="ENCRYPT" length="1"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

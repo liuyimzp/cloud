@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="appDiyFileDao" class="com.yinhai.cloud.module.application.impl.dao.impl.AppDiyFileDaoImpl"></bean>
+
+    <bean id="appDao" class="com.yinhai.cloud.module.application.impl.dao.impl.AppDaoImpl"></bean>
+
+    <bean id="appConfigDao" class="com.yinhai.cloud.module.application.impl.dao.impl.AppConfigDaoImpl"></bean>
+
+    <bean id="appServiceDao" class="com.yinhai.cloud.module.application.impl.dao.impl.AppServiceDaoImpl"></bean>
+
+    <bean id="namespaceDao" class="com.yinhai.cloud.module.application.impl.dao.impl.NamespaceDaoImpl"></bean>
+
+    <bean id="appPVDao" class="com.yinhai.cloud.module.application.impl.dao.impl.AppPVDaoImpl"></bean>
+
+    <bean id="appEnvDao" class="com.yinhai.cloud.module.application.impl.dao.impl.AppEnvDaoImpl"></bean>
+
+    <bean id="configMapDao" class="com.yinhai.cloud.module.application.impl.dao.impl.ConfigMapDaoImpl"></bean>
+
+
+    <bean id="configTemplateDao" class="com.yinhai.cloud.module.application.impl.dao.impl.ConfigTemplateDaoImpl"></bean>
+
+    <bean id="configBackUpDao" class="com.yinhai.cloud.module.application.impl.dao.impl.ConfigBackUpDaoImpl"></bean>
+
+    <bean id="appVersionDao" class="com.yinhai.cloud.module.application.impl.dao.impl.AppVersionDaoImpl"></bean>
+
+    <bean id="appBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.AppBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="configTemplateBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.ConfigTemplateBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="configBackUpBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.ConfigBackUpBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="appConfigBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.AppConfigBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="appServiceBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.AppServiceBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="namespaceBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.NamespaceBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="appPVBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.AppPVBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="appEnvBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.AppEnvBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="configMapBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.ConfigMapBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="appVersionBpo" parent="transactionProxy">
+        <property name="target">
+            <bean class="com.yinhai.cloud.module.application.impl.bpo.AppVersionBpoImpl">
+            </bean>
+        </property>
+    </bean>
+
+</beans>

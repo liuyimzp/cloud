@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.cloud.module.monitor.impl.po.ClusterMonitorPo" table="cloud_monitor_cluster">
+        <composite-id>
+            <key-property name="clusterId" column="cluster_id" type="java.lang.Long" length="20"/>
+            <key-property name="biztime" column="biztime" type="java.util.Date"/>
+        </composite-id>
+        <property name="clusterName" type="java.lang.String">
+            <column name="cluster_name" length="100"/>
+        </property>
+        <property name="clusterStatus" type="java.lang.Integer">
+            <column name="cluster_status" length="1"/>
+        </property>
+        <property name="cpuAvailability" type="java.lang.Double">
+            <column name="cluster_cpuavailability"/>
+        </property>
+        <property name="memoryAvailability" type="java.lang.Double">
+            <column name="cluster_memoryavailability" length="500"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
